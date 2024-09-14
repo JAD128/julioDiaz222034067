@@ -1,0 +1,169 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+    --tamaño-titulo : 2rem;
+    --color1 : #ff4900;
+    --tamaño-parrafo : 1rem;
+    --color2 : #0093FF;
+    --fuente-parrafo : 'Arial';
+    --tamaño-parrafo-2 : 12px;
+    --color3 : #c500ff;
+    --fuente-parrafo-2 : 'Nerko Oner', cursive;
+    --colorlink : #001bff;
+    --estilo-link : bold;
+    --colorv :  #4CAF50;
+    --colorh:  #ff6600;
+    --encabezado-color : #000000;
+    --fuente-encabezado-color : #ffffff;
+    --fuente-encabezado-tamaño : 1.5rem;
+    --filas-impar : #bec1c3;
+    --filas-impar-color-f : #000000;
+    --filas-tamaño-fuente : 1.5rem;
+    --filas-par : #045795;
+    --filas-par-color-f : #ffffff;
+    --decoracion-link: underline;
+}
+
+table {
+    background-color: aliceblue;
+}
+
+body, html{
+    background-color:  var(--filas-par-color-f);
+    font-family: var(--fuente-parrafo);
+}
+
+h2 {
+    color: var(--color1);
+    font-size: var(--tamaño-titulo);
+}
+
+p{
+    font-size: var(--tamaño-parrafo);
+    color: var(--color2);
+    font-family: var(--fuente-parrafo);
+}
+
+p.segundo{
+    font-size: var(--tamaño-parrafo-2);
+    color: var(--color3);
+    font-family: var(--fuente-parrafo-2);
+}
+
+ul li a {
+    color: var(--colorlink);
+    font-weight: var(--estilo-link);
+    text-decoration: var(--decoracion-link);
+}
+
+a:visited{
+    color: var(--colorv);
+}
+
+a:hover{
+    color: var(--colorh);
+    text-decoration: var(--decoracion-link);
+}
+
+th {
+    background-color: var(--encabezado-color);
+    color: var(--fuente-encabezado-color);
+    font-size: var(--fuente-encabezado-tamaño);
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    font-size: var(--filas-tamaño-fuente);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--filas-impar);
+    color: var(--filas-impar-color-f);
+}
+
+tr:nth-child(even) {
+    background-color: var(--filas-par);
+    color: var(--filas-par-color-f);
+}
+
+/* ------------------------------------------------------- */
+.contenedor {
+    background-color: var(--color2);
+    display: grid;
+    grid-template-rows: repeat(3);
+}
+
+.header {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 20px; 
+    background-color: #8a65e0;
+    border-bottom: 2px solid #552792; 
+    }
+
+.sapito {
+    color: #ffffff;
+    font-family: 'Nerko One';
+    font-size: 70px;
+}
+
+.logo {
+    margin-left: 10px;
+    background-color: #ffffff56;
+    width: 170px;
+    height: 170px;
+    background-size: 160px;
+    background-position: center;
+    border-radius: 20px;
+    background-image: url("https://melonsapito.com/wp-content/uploads/2018/06/sapito-new.png");
+}
+
+.buscador { 
+    background-color: #ffffff56;
+    width: 300px;
+    height: 50px;
+    justify-content: right;
+    border-radius: 25px;
+}
+
+.slidebar { 
+    background-color: #d1bef5;
+    width: 350px;
+    height: 500px;
+    border-radius: 25px;
+    text-align: center;
+}
+.content {
+    background-color: #9954e956;
+    height: 500px;
+    width: 1000px;
+    background-size: 1200px;
+    background-position: center;
+    border-radius: 30px;
+    background-image: url("https://consumer.huawei.com/content/dam/huawei-cbg-site/latam/common/launch/0502/plp/kv/pura70-ultra-kv.jpg") 
+}
+.main {
+    height: 500px;
+    display: flex;
+    grid-template-columns: repeat(2,1fr);   
+    width: 1500px;
+    margin: 10px;
+    gap: 10px;
+}
+.footer {
+    display: flex; 
+    justify-content: space-around; 
+    padding: 20px; 
+    background-color: #42088d; 
+    border-top: 2px solid #831edd; 
+}
+
+.footer1, .footer2, .footer3 {
+    background-color: #ffffff;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 20px;
+}

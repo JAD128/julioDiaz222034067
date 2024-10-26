@@ -12,13 +12,13 @@ import { Password } from 'primeng/password';
 })
 export class LoginComponent {
 
-  loginForm = this.fb.group(
-    {
-      usuario : ['', [Validators.required, Validators.name]],
-      password : ['', Validators.required, Validators]
-    }
-  );
-  constructor(private fb : FormBuilder){
+  // loginForm = this.fb.group(
+  //   {
+  //     usuario : ['', [Validators.required, Validators.name]],
+  //     password : ['', Validators.required, Validators]
+  //   }
+  // );
+  // constructor(private fb : FormBuilder){
 
-  }
+  // }
 }

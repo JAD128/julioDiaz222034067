@@ -1,0 +1,27 @@
+
+<div class="p-fluid">
+    <form [formGroup]="gerenteForm" (ngSubmit)="onSubmit()">
+        <div class="p-field">
+            <label for="name_g">El nombre del gerente</label>
+            <br>
+            <input id="name_g" type="text" pInputText formControlName = "name_g">
+            <div *ngIf="gerenteForm.controls['name_g'].invalid && gerenteForm.controls['name_g'].touched" class="error">
+                El nombre del gerente es requerido 👨‍💼
+            </div>
+        </div>
+        <div class="p-field">
+            <label for="email">Correo electrónico del gerente</label>
+            <br>
+            <div  class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-envelope"></i>
+                </span>
+                <input id="email" type="email" pInputText formControlName = "email">
+            </div>
+            <div *ngIf="gerenteForm.controls['email'].invalid && gerenteForm.controls['email'].touched" class="error">
+                Correo del gerente no valido 🙉
+            </div>
+        </div>
+    </form>
+
+</div> 

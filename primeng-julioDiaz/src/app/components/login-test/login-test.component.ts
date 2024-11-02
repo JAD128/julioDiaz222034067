@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login-test',
@@ -16,7 +18,7 @@ export class LoginTestComponent {
   userForm : FormGroup;
 
   // Constructor
-  constructor(private fb : FormBuilder){
+  constructor(private fb : FormBuilder, private loginService : LoginService){
     this.userForm = this.fb.group({
       name : ['', Validators.required],
       email : ['', [Validators.required, Validators.email]],
@@ -25,8 +27,11 @@ export class LoginTestComponent {
   }
   
   // Métodos personalizados
+  // Interaccion con el servidor login.serve
   onSubmit(){
     if(this.userForm.valid){
+      const {email, password} = this.userForm.value
+      this.loginService.login(email, password).subscribe(response => {console.log('Exitoso', response)})
       console.log(this.userForm.value)
     }
     else{

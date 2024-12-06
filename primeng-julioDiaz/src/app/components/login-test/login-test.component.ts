@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
@@ -10,7 +10,7 @@ import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-login-test',
   standalone: true,
-  imports: [ReactiveFormsModule, InputTextModule, ButtonModule, PasswordModule, CommonModule], // Modulos
+  imports: [ReactiveFormsModule, InputTextModule, ButtonModule, PasswordModule, CommonModule, HttpClientModule], // Modulos
   templateUrl: './login-test.component.html',
   styleUrl: './login-test.component.css'
 })

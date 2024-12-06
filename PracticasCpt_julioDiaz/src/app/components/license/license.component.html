@@ -1,31 +1,32 @@
-<div class="p-fluid">
-    <form [formGroup]="licenseForm" (ngSubmit)="onSubmit()">
+<h2>Detalles de la licencia</h2>
+<div [formGroup]="vacationsForm">
+    <!-- <form> -->
         <div class="p-field">
-            <label for="date_ini">Fecha de inicio</label>
+            <label for="date_ini"><p><b>Fecha de inicio</b></p></label>
             <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-calendar-times"></i></span>
-                <p-calendar id="date_ini" formControlName = "date_ini"></p-calendar>
+                <p-calendar id="date_ini" formControlName = "date_ini" [style]="{width:'100%'}"></p-calendar>
             </div>
-            <div *ngIf="licenseForm.controls['date_ini'].invalid && licenseForm.controls['date_ini'].touched" class="error">
+            <div *ngIf="vacationsForm.controls['date_ini'].invalid && vacationsForm.controls['date_ini'].touched" class="error">
                 La fecha de inicio es requerido 📆
             </div>
         </div>
         <div class="p-field">
-            <label for="date_fi">Fecha de finalización</label>
+            <label for="date_fi"><p><b>Fecha de inicio</b></p></label>
             <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-calendar-times"></i></span>
-                <p-calendar id="date_fi" formControlName = "date_fi"></p-calendar>
+                <p-calendar id="date_fi" formControlName = "date_fi" [style]="{width:'100%'}" ></p-calendar>
             </div>
-            <div *ngIf="licenseForm.controls['date_fi'].invalid && licenseForm.controls['date_fi'].touched" class="error">
+            <div *ngIf="vacationsForm.controls['date_fi'].invalid && vacationsForm.controls['date_fi'].touched" class="error">
                 La fecha de finalización es requerido 🗓️
             </div>
         </div>
         <div class="p-field">
-            <label for="notes">Notas</label>
+            <label for="notes"><p><b>Fecha de inicio</b></p></label>
             <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-align-left"></i></span>
                 <textarea pInputTextarea formControlName="notes"></textarea>
             </div>
         </div>
-    </form>
+    <!-- </form> -->
 </div>

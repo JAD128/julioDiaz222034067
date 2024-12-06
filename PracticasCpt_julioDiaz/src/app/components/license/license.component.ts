@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
@@ -14,23 +14,23 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
   styleUrl: './license.component.css'
 })
 export class LicenseComponent {
-  licenseForm : FormGroup
+  @Input() vacationsForm! : FormGroup
 
-  constructor(private fb : FormBuilder){
-    this.licenseForm = this.fb.group({
-      date_ini : ['', Validators.required],
-      date_fi : ['', Validators.required],
-      notes : ['', Validators.required]
-    })
-  }
+  // constructor(private fb : FormBuilder){
+  //   this.licenseForm = this.fb.group({
+  //     date_ini : ['', Validators.required],
+  //     date_fi : ['', Validators.required],
+  //     notes : ['', Validators.required]
+  //   })
+  // }
 
-  // Métodos
+  // // Métodos
 
-  onSubmit(){
-    if(this.licenseForm.valid){
-      console.log(this.licenseForm.value)
-    }else{
-      console.log('Formulario invalido')
-    }
-  }
+  // onSubmit(){
+  //   if(this.licenseForm.valid){
+  //     console.log(this.licenseForm.value)
+  //   }else{
+  //     console.log('Formulario invalido')
+  //   }
+  // }
 }

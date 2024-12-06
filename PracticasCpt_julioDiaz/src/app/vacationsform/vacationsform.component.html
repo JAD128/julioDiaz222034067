@@ -1,0 +1,7 @@
+<form [formGroup]="vacationsForm" (ngSubmit)="onSubmit()">
+    <app-p-information [vacationsForm]="vacationsForm"></app-p-information>
+    <app-g-information [vacationsForm]="vacationsForm"></app-g-information>
+    <app-license [vacationsForm]="vacationsForm"></app-license>
+    <p></p>
+    <button pButton style="width: 100%;" type="submit" label="Enviar" [disabled]="vacationsForm.invalid"></button>
+</form>

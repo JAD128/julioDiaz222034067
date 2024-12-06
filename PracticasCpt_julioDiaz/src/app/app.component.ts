@@ -4,11 +4,12 @@ import { PInformationComponent } from "./components/p-information/p-information.
 import { GInformationComponent } from "./components/g-information/g-information.component";
 import { LicenseComponent } from "./components/license/license.component";
 import { ButtonModule } from 'primeng/button';
+import { VacationsformComponent } from './vacationsform/vacationsform.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PInformationComponent, GInformationComponent, LicenseComponent, ButtonModule],
+  imports: [RouterOutlet, VacationsformComponent, ButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

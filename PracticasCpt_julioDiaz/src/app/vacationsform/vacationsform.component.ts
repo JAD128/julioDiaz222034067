@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { SolicitudVacacionesService } from '../services/solicitud-vacaciones.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ValidationComponent } from '../components/validation/validation.component';
 
 @Component({
   selector: 'app-vacationsform',
@@ -36,9 +37,8 @@ export class VacationsformComponent {
 
   onSubmit(){
     if (this.vacationsForm.valid){
-      console.log(this.vacationsForm.value);
-      const {name,lastName,email,phone,name_g,email_g,date_ini,date_fi,notes} = this.vacationsForm.value;
-      this.registerService.register(name,lastName,email,phone,name_g,email_g,date_ini,date_fi,notes).subscribe(
+      const {name,lastname,email,phone,name_g,email_g,date_ini,date_fi,notes} = this.vacationsForm.value;
+      this.registerService.register(name,lastname,email,phone,name_g,email_g,date_ini,date_fi,notes).subscribe(
         {
           next: (response) => {
             {console.log('Exitoso',response)};
@@ -50,6 +50,7 @@ export class VacationsformComponent {
           console.log("Envio de información completo!")
          }
         });
+        console.log(this.vacationsForm.value);
 
     }else{
       console.log('Formulario no valido');

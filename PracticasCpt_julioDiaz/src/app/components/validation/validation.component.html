@@ -1,0 +1,26 @@
+<div class="p-field center-content">
+    <form [formGroup]="val_form" (ngSubmit)="onSubmit()">
+        <div class="p-field">
+            <p><b>Apellido</b></p>
+            <input id="lastName" type="text" pInputText formControlName = "lastName" class="w-full">
+            <div *ngIf="val_form.controls['lastName'].invalid && val_form.controls['lastName'].touched" class="error">
+               Ingrese el apellido 😊
+            </div>
+        </div>
+        <div class="p-field">
+            <label for="email"><p><b>Correo electrónico</b></p></label>
+            <div  class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-envelope"></i>
+                </span>
+                <input id="email" type="email" pInputText formControlName = "email">
+            </div>
+            <div *ngIf="val_form.controls['email'].invalid && val_form.controls['email'].touched" class="error">
+                Ingrese un correo electrónico ✉️
+            </div>
+        </div>
+        <p></p>
+        <button pButton style="width: 100%;" type="submit" label="Consultar" [disabled]="val_form.invalid" ></button>
+    </form> 
+</div>
+

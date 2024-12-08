@@ -4,6 +4,7 @@ import { SolicitudVacacionesService } from '../../services/solicitud-vacaciones.
 import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-validation',
@@ -15,13 +16,17 @@ import { ButtonModule } from 'primeng/button';
 export class ValidationComponent {
   val_form : FormGroup
 
-  constructor(private fb : FormBuilder, private service : SolicitudVacacionesService){
+  constructor(private fb : FormBuilder, private service : SolicitudVacacionesService, private router : Router){
     this.val_form = this.fb.group(
       {
         email : ['', [Validators.required, Validators.email]],
         lastName : ['', Validators.required]
       }
     )
+  }
+
+  navigateToComponent() {
+    this.router.navigate(['/formulario_vacaciones']); 
   }
    
   //Métodos

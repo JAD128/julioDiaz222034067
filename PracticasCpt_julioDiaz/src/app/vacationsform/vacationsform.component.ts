@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ButtonModule } from 'primeng/button';
 import { SolicitudVacacionesService } from '../services/solicitud-vacaciones.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ValidationComponent } from '../components/validation/validation.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vacationsform',
@@ -19,7 +19,7 @@ import { ValidationComponent } from '../components/validation/validation.compone
 export class VacationsformComponent {
   vacationsForm : FormGroup;
 
-  constructor(private fb : FormBuilder, private registerService : SolicitudVacacionesService){
+  constructor(private fb : FormBuilder, private registerService : SolicitudVacacionesService, private router : Router){
     this.vacationsForm = this.fb.group(
       {
         name_g : ['', Validators.required],
@@ -33,6 +33,10 @@ export class VacationsformComponent {
         notes : ['', Validators.required]
       }
     )
+  }
+
+  navigateToComponent() {
+    this.router.navigate(['/validacion']); 
   }
 
   onSubmit(){
